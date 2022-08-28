@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOKEPON! 🔥💧🌱</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="titulo">MOKEPON! <br> 🔥💧🌱</h1>
+    <section class="seccion-mascota" id="seleccionar-mascota">
+        <h2 class="titulo-mascota" id="mascota-elegida">Elige tu mascota</h2>
+        <article class="contenedor-mascotas" id="contenedor-mokepones">
+        </article>
+        <button id="boton-mascota">Seleccionar</button>    
+    </section>
+    <section class="mapa" id="ver-mapa">
+        <h2>Recorre el mapa con tu mokepon</h2>
+        <div class="contenedor-mapa">
+            <canvas id="canvas-mapa"></canvas>
+            <div class="botones-movimiento">
+                <button id="boton-arriba" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" ontouchstart="moverArriba()" onmousedown="moverArriba()">⬆</button>
+                <button id="boton-izquierda"  ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" ontouchstart="moverIzquierda()" onmousedown="moverIzquierda()">⬅</button>
+                <button id="boton-abajo"  ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" ontouchstart="moverAbajo()" onmousedown="moverAbajo()">⬇</button>
+                <button id="boton-derecha"  ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" ontouchstart="moverDerecha()" onmousedown="moverDerecha()">➡</button>
+            </div>
+        </div>
+    </section>
+    <section class="contenedor-fase-batalla" id="fase-batalla">
+        <h2 class="titulo-fase-batalla">Fase de Batalla</h2>
+        <div class="mascota-batalla-jugador" id="mascota-elegida-jugador">
+            <img id="foto-mascota-jugador" src="" alt="">
+            <p>Tu mascota elegida es: <span id="mascota-jugador"></span></p> 
+            <p>Vidas: <span class="vidas" id="mascota-jugador-vida"></span> Victorias: <span class="victorias" id="mascota-jugador-victorias"></span></p>
+        </div>
+        <div class="mascota-batalla-enemigo" id="mascota-elegida-enemigo">
+            <img id="foto-mascota-enemigo" src="" alt="">
+            <p>La mascota de tu rival es: <span id="mascota-enemigo"></span></p>
+            <p>Vidas: <span class="vidas" id="mascota-enemigo-vida"></span> Victorias: <span class="victorias" id="mascota-enemigo-victorias"></span></p>
+        </div>
+        <div class="ataques" id="seleccionar-ataque">
+            <h3 id="titulo-ataques">Selecciona el orden de tus ataques</h2>
+            <article class="contenedor-boton-ataque" id="botones-ataques">
+                <button type="submit" id="boton-reiniciar">REINICIAR</button>
+            </article>
+        </div>
+        <div class="mensajes" id="instrucciones">
+            <h3>Instrucciones:</h3>
+            <button id="enfrentamiento">INICIAR BATALLA</button>
+            <article>
+                <p>- Selecciona tus ataques en el orden que deseas utilizarlos y luego presiona el boton "iniciar batalla".
+                <br><br>- Gana el mejor de 5 enfrentamientos.
+                <br><br>- Si alguien se queda sin vidas antes de los 5 enfrentamientos pierde, y el juego finaliza.</p>
+            </article>
+        </div>
+        <div class="mensajes" id="registro-batalla">
+            <h3>Registro de batalla</h3>
+            <a id="indice" href=""></a>
+            <article id="registro"></article><!-- debe tener scrool behavior(automatico) unando funcion de crearMensaje -->
+        </div>
+    </section>
+    <script src="./js/mokepon.js"></script>
+</body>
+</html>
